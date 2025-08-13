@@ -1,0 +1,200 @@
+2025-08-12 22:36:41,897 INFO 🚀 启动消息转发系统...
+2025-08-12 22:36:41,897 INFO 📋 监听频道: ['1393897584875274361']
+2025-08-12 22:36:41,897 INFO 🎯 目标频道: ['1393897806753955980']
+2025-08-12 22:36:41,897 INFO 🤖 机器人数量: 1
+2025-08-12 22:36:41,897 INFO logging in using static token
+2025-08-12 22:36:42,277 ERROR ❌ Bot1 登录失败: Improper token has been passed. (token: ...)
+2025-08-12 22:36:43,290 INFO 即将启动 selfcord 监听账号...
+2025-08-12 22:36:43,290 INFO Logging in using static token.
+2025-08-12 22:36:44,133 INFO Found user agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36", build number 429675.
+2025-08-12 22:36:44,133 INFO Found TLS fingerprint target "chrome136".
+2025-08-12 22:36:44,504 ERROR ❌ 监听账号登录失败: Improper token has been passed
+2025-08-12 22:36:47,949 INFO Shard ID None session has been invalidated.
+2025-08-12 22:36:56,463 INFO Shard ID None session has been invalidated.
+2025-08-12 22:37:04,529 INFO Shard ID None session has been invalidated.
+2025-08-12 22:37:12,735 INFO Shard ID None session has been invalidated.
+2025-08-12 22:37:22,457 INFO Shard ID None session has been invalidated.
+2025-08-12 22:37:32,350 INFO Shard ID None session has been invalidated.
+2025-08-12 22:37:41,298 INFO Shard ID None session has been invalidated.
+2025-08-12 22:37:52,524 INFO Shard ID None session has been invalidated.
+2025-08-12 22:38:03,704 INFO Shard ID None session has been invalidated.
+2025-08-12 22:38:13,392 INFO Shard ID None session has been invalidated.
+2025-08-12 22:38:21,850 INFO Shard ID None session has been invalidated.
+2025-08-12 22:38:32,789 INFO Shard ID None session has been invalidated.
+2025-08-12 22:38:41,295 INFO Shard ID None session has been invalidated.
+2025-08-12 22:38:52,392 INFO Shard ID None session has been invalidated.
+2025-08-12 22:39:03,556 INFO Shard ID None session has been invalidated.
+2025-08-12 22:39:14,421 INFO Shard ID None session has been invalidated.
+2025-08-12 22:39:24,003 INFO Shard ID None session has been invalidated.
+2025-08-12 22:39:28,479 INFO 🚀 启动消息转发系统...
+2025-08-12 22:39:28,479 INFO 📋 监听频道: ['1393897584875274361']
+2025-08-12 22:39:28,479 INFO 🎯 目标频道: ['1393897806753955980']
+2025-08-12 22:39:28,479 INFO 🤖 机器人数量: 1
+2025-08-12 22:39:28,479 INFO logging in using static token
+2025-08-12 22:39:29,285 INFO ✅ Bot1 登录成功 (token: MTM5NzE5Mj...)
+2025-08-12 22:39:30,299 INFO 即将启动 selfcord 监听账号...
+2025-08-12 22:39:30,299 INFO Logging in using static token.
+2025-08-12 22:39:30,950 INFO Shard ID None has connected to Gateway (Session ID: 2212021c70edba44a6873c7acc20e914).
+2025-08-12 22:39:31,071 INFO Found user agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36", build number 429675.
+2025-08-12 22:39:31,071 INFO Found TLS fingerprint target "chrome136".
+2025-08-12 22:39:32,829 INFO Connected to Gateway (session ID: 6a5ef054f47b19c096318f34dc27f946).
+2025-08-12 22:39:33,347 INFO 🤖 转发机器人已登录: test-dc#9065
+2025-08-12 22:39:33,348 INFO ✅ 转发机器人准备就绪!
+2025-08-12 22:39:34,313 INFO 🎧 监听客户端已登录: liangjiang0609
+2025-08-12 22:39:34,314 INFO 📡 开始监听指定频道...
+2025-08-12 22:39:38,964 INFO 消息内容为空，尝试获取频道 1287074853223923854 最新消息
+2025-08-12 22:39:39,374 INFO 成功获取并处理频道 1287074853223923854 最新消息
+2025-08-12 22:40:37,919 INFO 消息内容为空，尝试获取频道 1287074853223923854 最新消息
+2025-08-12 22:40:38,335 INFO 成功获取并处理频道 1287074853223923854 最新消息
+2025-08-12 22:40:39,023 INFO 消息内容为空，尝试获取频道 1287074853223923854 最新消息
+2025-08-12 22:40:39,558 INFO 成功获取并处理频道 1287074853223923854 最新消息
+2025-08-12 22:40:55,228 INFO 消息内容为空，尝试获取频道 1177659428229619753 最新消息
+2025-08-12 22:40:55,703 INFO 成功获取并处理频道 1177659428229619753 最新消息
+2025-08-12 22:41:12,668 INFO 📨 收到来自频道 1393897584875274361 的消息: 1... (用户: 1334375515360067676)
+2025-08-12 22:41:12,668 INFO [转发前] content: '1' | embeds: 0 | attachments: 0
+2025-08-12 22:41:12,668 INFO [转发参数] send_kwargs: {'content': '1'}
+2025-08-12 22:41:13,126 INFO ✅ 消息已转发到频道 1393897806753955980
+2025-08-12 22:41:23,101 INFO 消息内容为空，尝试获取频道 909437914520387664 最新消息
+2025-08-12 22:41:23,543 INFO 成功获取并处理频道 909437914520387664 最新消息
+2025-08-12 22:41:31,049 ERROR message_snapshots[0] dir: ['__annotations__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '_cs_cached_message', '_cs_raw_channel_mentions', '_cs_raw_mentions', '_cs_raw_role_mentions', '_edited_timestamp', '_from_value', '_state', 'attachments', 'cached_message', 'components', 'content', 'created_at', 'edited_at', 'embeds', 'flags', 'id', 'raw_channel_mentions', 'raw_mentions', 'raw_role_mentions', 'stickers', 'type']
+2025-08-12 22:41:31,051 ERROR message_snapshots[0] dict: {}
+2025-08-12 22:41:31,052 INFO 📨 收到来自频道 1393897584875274361 的消息: ... (用户: 1334375515360067676)
+2025-08-12 22:41:31,052 INFO [转发前] content: '' | embeds: 1 | attachments: 0
+2025-08-12 22:41:31,052 INFO [转发参数] send_kwargs: {'embeds': [<discord.embeds.Embed object at 0x000001AAA4BEDB40>]}
+2025-08-12 22:41:31,451 INFO 消息内容为空，尝试获取频道 1393897806753955980 最新消息
+2025-08-12 22:41:31,502 INFO ✅ 消息已转发到频道 1393897806753955980
+2025-08-12 22:41:31,903 INFO 成功获取并处理频道 1393897806753955980 最新消息
+2025-08-12 22:42:12,404 ERROR message_snapshots[0] dir: ['__annotations__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '_cs_cached_message', '_cs_raw_channel_mentions', '_cs_raw_mentions', '_cs_raw_role_mentions', '_edited_timestamp', '_from_value', '_state', 'attachments', 'cached_message', 'components', 'content', 'created_at', 'edited_at', 'embeds', 'flags', 'id', 'raw_channel_mentions', 'raw_mentions', 'raw_role_mentions', 'stickers', 'type']
+2025-08-12 22:42:12,404 ERROR message_snapshots[0] dict: {}
+2025-08-12 22:42:30,828 ERROR ❌ 监听账号登录失败: unsupported operand type(s) for 'in': 'int' and 'EnumType'
+2025-08-12 22:50:16,130 INFO 🚀 启动消息转发系统...
+2025-08-12 22:50:16,130 INFO 📋 监听频道: ['1393897584875274361']
+2025-08-12 22:50:16,130 INFO 🎯 目标频道: ['1393897806753955980']
+2025-08-12 22:50:16,130 INFO 🤖 机器人数量: 1
+2025-08-12 22:50:16,130 INFO logging in using static token
+2025-08-12 22:50:16,916 INFO ✅ Bot1 登录成功 (token: MTM5NzE5Mj...)
+2025-08-12 22:50:17,924 INFO 即将启动 selfcord 监听账号...
+2025-08-12 22:50:17,924 INFO Logging in using static token.
+2025-08-12 22:50:18,837 INFO Found user agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36", build number 429675.
+2025-08-12 22:50:18,837 INFO Found TLS fingerprint target "chrome136".
+2025-08-12 22:50:19,050 INFO Shard ID None has connected to Gateway (Session ID: acb0ad0a6c44522540e650ffd508be66).
+2025-08-12 22:50:20,696 INFO Connected to Gateway (session ID: 14372501faf8b370b759bc018404be58).
+2025-08-12 22:50:21,179 INFO 🤖 转发机器人已登录: test-dc#9065
+2025-08-12 22:50:21,179 INFO ✅ 转发机器人准备就绪!
+2025-08-12 22:50:22,011 INFO 🎧 监听客户端已登录: liangjiang0609
+2025-08-12 22:50:22,011 INFO 📡 开始监听指定频道...
+2025-08-12 22:50:50,121 ERROR message_snapshots[0] dir: ['__annotations__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '_cs_cached_message', '_cs_raw_channel_mentions', '_cs_raw_mentions', '_cs_raw_role_mentions', '_edited_timestamp', '_from_value', '_state', 'attachments', 'cached_message', 'components', 'content', 'created_at', 'edited_at', 'embeds', 'flags', 'id', 'raw_channel_mentions', 'raw_mentions', 'raw_role_mentions', 'stickers', 'type']
+2025-08-12 22:50:50,121 ERROR message_snapshots[0] dict: {}
+2025-08-12 22:50:50,121 INFO 📨 收到来自频道 1393897584875274361 的消息: ... (用户: 1334375515360067676)
+2025-08-12 22:50:50,121 INFO [转发前] content: '' | embeds: 1 | attachments: 0
+2025-08-12 22:50:50,121 INFO [转发参数] send_kwargs: {'embeds': [<discord.embeds.Embed object at 0x000001DE6CE69510>]}
+2025-08-12 22:50:51,539 INFO ✅ 消息已转发到频道 1393897806753955980
+2025-08-12 23:01:27,741 ERROR Task was destroyed but it is pending!
+task: <Task cancelling name='Task-1' coro=<main() done, defined at E:\Project\转发-指定用户-关键字过滤替换\bot.py:454> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py:754]>
+2025-08-12 23:01:27,744 ERROR Task was destroyed but it is pending!
+task: <Task pending name='Task-9055' coro=<AsyncWebSocket.recv() running at C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\curl_cffi\requests\websockets.py:628> wait_for=<Future pending cb=[aselect.<locals>.<lambda>() at C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\curl_cffi\requests\websockets.py:87, Task.task_wakeup()]> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py:421]>
+2025-08-12 23:01:28,798 INFO 🚀 启动消息转发系统...
+2025-08-12 23:01:28,798 INFO 📋 监听频道: ['1393897584875274361']
+2025-08-12 23:01:28,798 INFO 🎯 目标频道: ['1393897806753955980']
+2025-08-12 23:01:28,798 INFO 🤖 机器人数量: 1
+2025-08-12 23:01:28,798 INFO logging in using static token
+2025-08-12 23:01:30,657 INFO ✅ Bot1 登录成功 (token: MTM5NzE5Mj...)
+2025-08-12 23:01:31,672 INFO 即将启动 selfcord 监听账号...
+2025-08-12 23:01:31,672 INFO Logging in using static token.
+2025-08-12 23:01:33,507 INFO Shard ID None has connected to Gateway (Session ID: 0b3331ae1adf3118f5dbe5ae472086d4).
+2025-08-12 23:01:33,508 INFO Found user agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36", build number 429675.
+2025-08-12 23:01:33,509 INFO Found TLS fingerprint target "chrome136".
+2025-08-12 23:01:35,302 INFO Connected to Gateway (session ID: 207a0bc971991cb81ecef2896a0a8346).
+2025-08-12 23:01:35,897 INFO 🤖 转发机器人已登录: test-dc#9065
+2025-08-12 23:01:35,898 INFO ✅ 转发机器人准备就绪!
+2025-08-12 23:01:36,752 INFO 🎧 监听客户端已登录: liangjiang0609
+2025-08-12 23:01:36,752 INFO 📡 开始监听指定频道...
+2025-08-12 23:01:40,125 ERROR message_snapshots[0] dir: ['__annotations__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '_cs_cached_message', '_cs_raw_channel_mentions', '_cs_raw_mentions', '_cs_raw_role_mentions', '_edited_timestamp', '_from_value', '_state', 'attachments', 'cached_message', 'components', 'content', 'created_at', 'edited_at', 'embeds', 'flags', 'id', 'raw_channel_mentions', 'raw_mentions', 'raw_role_mentions', 'stickers', 'type']
+2025-08-12 23:01:40,126 ERROR message_snapshots[0] dict: {}
+2025-08-12 23:01:40,126 INFO 检测到仅图片 embeds，尝试通过HTTP获取频道 1393897584875274361 最新消息进行标准化
+2025-08-12 23:01:40,522 INFO 开始翻译消息内容: MSTR - At MAJOR pivot/potential reversal spot
+This... (模型: gpt-4o-mini)
+2025-08-12 23:01:53,541 INFO 翻译成功: MSTR - At MAJOR pivot/potential reversal spot
+This... -> MSTR - 在主要的转折/潜在反转点
+这个股票在我们最近的回撤中，从 Consolidation ...
+2025-08-12 23:01:53,542 INFO 消息内容已翻译为chinese
+2025-08-12 23:01:53,542 INFO 开始翻译 2 个 embeds (模型: gpt-4o-mini)
+2025-08-12 23:01:53,542 INFO 所有 embeds 翻译完成
+2025-08-12 23:01:53,542 INFO 📨 收到来自频道 1393897584875274361 的消息: MSTR - 在主要的转折/潜在反转点
+这个股票在我们最近的回撤中，从 Consolidation ... (用户: 1073191903782252554)
+2025-08-12 23:01:53,543 INFO [转发前] content: 'MSTR - 在主要的转折/潜在反转点\n这个股票在我们最近的回撤中，从 Consolidation / Accumulation 区间出发，迅速上涨，当它触及 $424 时，被拒绝并下跌至 $350-380 区域。\n它最近再次突破，经历了 3 周的稳定增长，但上周，创下新高后，于周五又回落至关键的 $424 区域。\n这是本周的重要转折点，这个价位曾长期是阻力，直到两周前我们才首次周收盘超过这个水平，而现在我们又回落至此 - 所以我们希望它能作为支撑位。\n只要 $420 区域能够保持，我们将寻求继续上涨，以重新测试 $440 区域，最终目标为 $470 区域。\n如果无法守住 $420 区域，我们就得看看会落到哪里，下面的支撑位在 $387-403。周五的日线蜡烛图相当令人沮丧，但它仍然保持在支撑上并且在 20EMA 之上 - 所以我们需要从这里获取一些方向。' | embeds: 2 | attachments: 0
+2025-08-12 23:01:53,543 INFO [转发参数] send_kwargs: {'content': 'MSTR - 在主要的转折/潜在反转点\n这个股票在我们最近的回撤中，从 Consolidation / Accumulation 区间出发，迅速上涨，当它触及 $424 时，被拒绝并下跌至 $350-380 区域。\n它最近再次突破，经历了 3 周的稳定增长，但上周，创下新高后，于周五又回落至关键的 $424 区域。\n这是本周的重要转折点，这个价位曾长期是阻力，直到两周前我们才首次周收盘超过这个水平，而现在我们又回落至此 - 所以我们希望它能作为支撑位。\n只要 $420 区域能够保持，我们将寻求继续上涨，以重新测试 $440 区域，最终目标为 $470 区域。\n如果无法守住 $420 区域，我们就得看看会落到哪里，下面的支撑位在 $387-403。周五的日线蜡烛图相当令人沮丧，但它仍然保持在支撑上并且在 20EMA 之上 - 所以我们需要从这里获取一些方向。', 'embeds': [<discord.embeds.Embed object at 0x00000160B8D2B5B0>, <discord.embeds.Embed object at 0x00000160B8D2B640>]}
+2025-08-12 23:01:53,971 INFO 检测到仅图片 embeds，尝试通过HTTP获取频道 1393897806753955980 最新消息进行标准化
+2025-08-12 23:01:54,031 INFO ✅ 消息已转发到频道 1393897806753955980
+2025-08-12 23:01:54,398 INFO 因仅图片 embeds，已通过HTTP标准化处理频道 1393897806753955980 最新消息
+2025-08-12 23:01:57,339 ERROR message_snapshots[0] dir: ['__annotations__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '_cs_cached_message', '_cs_raw_channel_mentions', '_cs_raw_mentions', '_cs_raw_role_mentions', '_edited_timestamp', '_from_value', '_state', 'attachments', 'cached_message', 'components', 'content', 'created_at', 'edited_at', 'embeds', 'flags', 'id', 'raw_channel_mentions', 'raw_mentions', 'raw_role_mentions', 'stickers', 'type']
+2025-08-12 23:01:57,339 ERROR message_snapshots[0] dict: {}
+2025-08-12 23:01:57,339 INFO 检测到仅图片 embeds，尝试通过HTTP获取频道 1393897584875274361 最新消息进行标准化
+2025-08-12 23:01:57,827 INFO 开始翻译消息内容: MSTR - At MAJOR pivot/potential reversal spot
+This... (模型: gpt-4o-mini)
+2025-08-12 23:02:13,183 INFO 翻译成功: MSTR - At MAJOR pivot/potential reversal spot
+This... -> MSTR - 在主要的支撑/潜在反转点
+最近在我们的整合/积累区间内强劲反弹，当时其价格在$424遇...
+2025-08-12 23:02:13,183 INFO 消息内容已翻译为chinese
+2025-08-12 23:02:13,183 INFO 开始翻译 2 个 embeds (模型: gpt-4o-mini)
+2025-08-12 23:02:13,185 INFO 所有 embeds 翻译完成
+2025-08-12 23:02:13,185 INFO 📨 收到来自频道 1393897584875274361 的消息: MSTR - 在主要的支撑/潜在反转点
+最近在我们的整合/积累区间内强劲反弹，当时其价格在$424遇... (用户: 1334375515360067676)
+2025-08-12 23:02:13,186 INFO [转发前] content: 'MSTR - 在主要的支撑/潜在反转点\n最近在我们的整合/积累区间内强劲反弹，当时其价格在$424遇阻回落，跌至$350-$380区间。\n它最近再次突破，表现出3周的稳定走势，但上周创出新高后，于周五迅速回落至关键的$424区域。\n这个点本周是一个主要的支撑点，之前长期以来的阻力位，直到两周前我们从来没有在这一水平之上实现周线收盘，而现在我们又回落到这里——所以我们希望它能够作为支撑。\n只要$420区间能够保持，我预计会继续向上，重新测试$440区间，最终目标为$470区间。\n如果未能保持在$420区间，我们需要看看价格最终在哪里落脚，下方有支撑位在$387-$403。周五的日线蜡烛图看起来相当令人沮丧，但它也保持了支撑，并且依然在20EMA之上——所以我们需要接下来的方向。' | embeds: 2 | attachments: 0
+2025-08-12 23:02:13,186 INFO [转发参数] send_kwargs: {'content': 'MSTR - 在主要的支撑/潜在反转点\n最近在我们的整合/积累区间内强劲反弹，当时其价格在$424遇阻回落，跌至$350-$380区间。\n它最近再次突破，表现出3周的稳定走势，但上周创出新高后，于周五迅速回落至关键的$424区域。\n这个点本周是一个主要的支撑点，之前长期以来的阻力位，直到两周前我们从来没有在这一水平之上实现周线收盘，而现在我们又回落到这里——所以我们希望它能够作为支撑。\n只要$420区间能够保持，我预计会继续向上，重新测试$440区间，最终目标为$470区间。\n如果未能保持在$420区间，我们需要看看价格最终在哪里落脚，下方有支撑位在$387-$403。周五的日线蜡烛图看起来相当令人沮丧，但它也保持了支撑，并且依然在20EMA之上——所以我们需要接下来的方向。', 'embeds': [<discord.embeds.Embed object at 0x00000160B7BA4160>, <discord.embeds.Embed object at 0x00000160B7BA41F0>]}
+2025-08-12 23:02:14,628 INFO 检测到仅图片 embeds，尝试通过HTTP获取频道 1393897806753955980 最新消息进行标准化
+2025-08-12 23:02:14,672 INFO ✅ 消息已转发到频道 1393897806753955980
+2025-08-12 23:02:16,040 INFO 因仅图片 embeds，已通过HTTP标准化处理频道 1393897806753955980 最新消息
+2025-08-12 23:02:25,239 ERROR Task was destroyed but it is pending!
+task: <Task cancelling name='Task-1' coro=<main() done, defined at E:\Project\转发-指定用户-关键字过滤替换\bot.py:505> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py:754]>
+2025-08-12 23:02:25,241 ERROR Task was destroyed but it is pending!
+task: <Task pending name='Task-685' coro=<AsyncWebSocket.recv() running at C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\curl_cffi\requests\websockets.py:628> wait_for=<Future pending cb=[aselect.<locals>.<lambda>() at C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\site-packages\curl_cffi\requests\websockets.py:87, Task.task_wakeup()]> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py:421]>
+2025-08-13 00:37:15,079 INFO 🚀 启动消息转发系统...
+2025-08-13 00:37:15,080 INFO 📋 监听频道: ['1393897584875274361']
+2025-08-13 00:37:15,080 INFO 🎯 目标频道: ['1393897806753955980']
+2025-08-13 00:37:15,080 INFO 🤖 机器人数量: 1
+2025-08-13 00:37:15,080 INFO logging in using static token
+2025-08-13 00:37:15,971 INFO ✅ Bot1 登录成功 (token: MTM5NzE5Mj...)
+2025-08-13 00:37:16,976 INFO 即将启动 selfcord 监听账号...
+2025-08-13 00:37:16,976 INFO Logging in using static token.
+2025-08-13 00:37:17,770 INFO Found user agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36", build number 429675.
+2025-08-13 00:37:17,770 INFO Found TLS fingerprint target "chrome136".
+2025-08-13 00:37:17,939 INFO Shard ID None has connected to Gateway (Session ID: 620218af2b8d257e16d38b0a52d66ebd).
+2025-08-13 00:37:19,500 INFO Connected to Gateway (session ID: 7a9addfd574aed76af6002d4f8453d8f).
+2025-08-13 00:37:20,016 INFO 🤖 转发机器人已登录: test-dc#9065
+2025-08-13 00:37:20,017 INFO ✅ 转发机器人准备就绪!
+2025-08-13 00:37:20,873 INFO 🎧 监听客户端已登录: liangjiang0609
+2025-08-13 00:37:20,873 INFO 📡 开始监听指定频道...
+2025-08-13 00:38:26,201 ERROR message_snapshots[0] dir: ['__annotations__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '_cs_cached_message', '_cs_raw_channel_mentions', '_cs_raw_mentions', '_cs_raw_role_mentions', '_edited_timestamp', '_from_value', '_state', 'attachments', 'cached_message', 'components', 'content', 'created_at', 'edited_at', 'embeds', 'flags', 'id', 'raw_channel_mentions', 'raw_mentions', 'raw_role_mentions', 'stickers', 'type']
+2025-08-13 00:38:26,201 ERROR message_snapshots[0] dict: {}
+2025-08-13 00:38:26,201 INFO 检测到仅图片 embeds，尝试通过HTTP获取频道 1393897584875274361 最新消息进行标准化
+2025-08-13 00:38:26,575 INFO 开始翻译消息内容: MSTR - At MAJOR pivot/potential reversal spot
+This... (模型: gpt-4o-mini)
+2025-08-13 00:38:39,745 INFO 翻译成功: MSTR - At MAJOR pivot/potential reversal spot
+This... -> MSTR - 在主要的枢轴/潜在反转点
+这一点在我们最近的回调中，从整合/积累区间强势拉升，当时碰到...
+2025-08-13 00:38:39,745 INFO 消息内容已翻译为chinese
+2025-08-13 00:38:39,745 INFO 开始翻译 2 个 embeds (模型: gpt-4o-mini)
+2025-08-13 00:38:39,746 INFO 所有 embeds 翻译完成
+2025-08-13 00:38:39,746 INFO 📨 收到来自频道 1393897584875274361 的消息: MSTR - 在主要的枢轴/潜在反转点
+这一点在我们最近的回调中，从整合/积累区间强势拉升，当时碰到... (用户: 1235805671799263274)
+2025-08-13 00:38:39,746 INFO [转发前] content: 'MSTR - 在主要的枢轴/潜在反转点\n这一点在我们最近的回调中，从整合/积累区间强势拉升，当时碰到了$424，出现了拒绝并下跌，滑落至$350-380区间。\n它最近再次突破，经历了3周的强劲表现，但上周创下新高后，马上回落至关键的$424区域。\n这是本周的一个主要枢轴，这个水平曾长时间是阻力，直到两周前我们才首次在周线上收盘于此水平之上，而现在我们又回落至此 - 所以我们希望它能作为支撑位保持住。\n只要$420区间能够站稳，我们就期待继续走高，以重新测试$440区间，并最终达到$470的目标。\n如果不能守住$420区间，我们就得等待看看会落到哪里，下面的支撑在$387-403。周五的日线蜡烛图相当令人沮丧，但它依然保持在支撑位之上，且仍在20日指数移动平均线之上 - 所以我们需要从这里找到一些方向。' | embeds: 2 | attachments: 0
+2025-08-13 00:38:39,756 INFO [转发参数] send_kwargs: {'content': 'MSTR - 在主要的枢轴/潜在反转点\n这一点在我们最近的回调中，从整合/积累区间强势拉升，当时碰到了$424，出现了拒绝并下跌，滑落至$350-380区间。\n它最近再次突破，经历了3周的强劲表现，但上周创下新高后，马上回落至关键的$424区域。\n这是本周的一个主要枢轴，这个水平曾长时间是阻力，直到两周前我们才首次在周线上收盘于此水平之上，而现在我们又回落至此 - 所以我们希望它能作为支撑位保持住。\n只要$420区间能够站稳，我们就期待继续走高，以重新测试$440区间，并最终达到$470的目标。\n如果不能守住$420区间，我们就得等待看看会落到哪里，下面的支撑在$387-403。周五的日线蜡烛图相当令人沮丧，但它依然保持在支撑位之上，且仍在20日指数移动平均线之上 - 所以我们需要从这里找到一些方向。', 'embeds': [<discord.embeds.Embed object at 0x000002553C0470A0>, <discord.embeds.Embed object at 0x000002553C047250>]}
+2025-08-13 00:38:40,300 INFO 检测到仅图片 embeds，尝试通过HTTP获取频道 1393897806753955980 最新消息进行标准化
+2025-08-13 00:38:40,427 INFO ✅ 消息已转发到频道 1393897806753955980
+2025-08-13 00:38:40,682 INFO 因仅图片 embeds，已通过HTTP标准化处理频道 1393897806753955980 最新消息
+2025-08-13 00:39:01,360 INFO 开始翻译消息内容: 123... (模型: gpt-4o-mini)
+2025-08-13 00:39:03,066 INFO 翻译成功: 123... -> 123...
+2025-08-13 00:39:03,067 INFO 📨 收到来自频道 1393897584875274361 的消息: 123... (用户: 1235805671799263274)
+2025-08-13 00:39:03,067 INFO [转发前] content: '123' | embeds: 0 | attachments: 0
+2025-08-13 00:39:03,067 INFO [转发参数] send_kwargs: {'content': '123'}
+2025-08-13 00:39:03,870 INFO ✅ 消息已转发到频道 1393897806753955980
+2025-08-13 00:39:22,224 INFO 📨 收到来自频道 1393897584875274361 的消息: ... (用户: 1235805671799263274)
+2025-08-13 00:39:22,224 INFO 📎 发现 1 个附件
+2025-08-13 00:39:22,224 INFO [转发前] content: '' | embeds: 0 | attachments: 1
+2025-08-13 00:39:22,224 INFO [转发参数] send_kwargs: {}
+2025-08-13 00:39:34,213 INFO ✅ 附件已转发: 20250715161503.png
+2025-08-13 00:39:34,213 INFO ✅ 消息已转发到频道 1393897806753955980
+2025-08-13 00:51:30,615 INFO Gateway received close code None and reason 'Failed to WS_RECV, curl: (56) Recv failure: Connection was reset. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.'.
+2025-08-13 00:51:52,852 ERROR Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002553A1BC950>

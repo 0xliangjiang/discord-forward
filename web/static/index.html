@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>机器人配置管理</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { background: #f8f9fa; }
+    .container { max-width: 1200px; margin-top: 40px; }
+    .form-label { font-weight: bold; }
+    .section-title { margin-top: 2rem; margin-bottom: 1rem; font-size: 1.2rem; color: #333; }
+    .table td, .table th { vertical-align: middle; }
+    pre#logBox { background:#222;color:#eee;padding:1em;height:300px;overflow:auto;font-size:13px;border-radius:6px; }
+    .channel-card { border: 1px solid #ddd; margin: 10px 0; border-radius: 8px; overflow: hidden; }
+    .channel-header { background: #f8f9fa; padding: 15px; border-bottom: 1px solid #ddd; }
+    .channel-body { padding: 20px; background: white; }
+    .config-section { margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; }
+    .config-section:first-child { margin-top: 0; border-top: none; }
+  </style>
+</head>
+<body>
+  <div class="container shadow p-4 bg-white rounded">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>机器人配置管理</h2>
+      <a href="/people.html" class="btn btn-outline-info">成员信息获取</a>
+    </div>
+    <form id="configForm">
+      <div class="section-title">监听账号 Token</div>
+      <div class="mb-3">
+        <input type="text" class="form-control" id="listenerToken" placeholder="请输入监听账号Token">
+      </div>
+      <div class="section-title">GeekAI API 密钥</div>
+      <div class="mb-3">
+        <input type="text" class="form-control" id="geekaiApiKey" placeholder="请输入GeekAI API密钥">
+      </div>
+      <div class="section-title">监听频道与转发频道（channel_mapping）</div>
+      <div id="channelMappingList"></div>
+      <button type="button" class="btn btn-outline-primary btn-sm mb-3" onclick="addChannelMapping()">添加频道映射</button>
+      <div class="section-title">机器人列表（bots）</div>
+      <table class="table table-bordered align-middle" id="botsTable">
+        <thead class="table-light">
+          <tr>
+            <th>Token</th>
+            <th>备注</th>
+            <th>目标频道ID（逗号分隔）</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="botsBody"></tbody>
+      </table>
+      <button type="button" class="btn btn-outline-primary btn-sm mb-3" onclick="addBotRow()">添加机器人</button>
+      <div class="section-title">操作</div>
+      <button type="button" class="btn btn-success" onclick="saveConfig()">保存配置</button>
+      <button type="button" class="btn btn-warning ms-2" onclick="restartBot()">重启机器人</button>
+      <span id="msg" class="ms-3"></span>
+    </form>
+    <div class="section-title">消息日志</div>
+    <pre id="logBox"></pre>
+  </div>
+  <script>
+    let config = {};
+    
+    // --- 频道映射管理 ---
+    function renderChannelMapping() {
+      const container = document.getElementById('channelMappingList');
+      container.innerHTML = '';
+      const mapping = config.channel_mapping || {};
+      Object.entries(mapping).forEach(([source, obj], idx) => {
+        container.innerHTML += `
+          <div class="channel-card" id="cmConfig${idx}">
+            <div class="channel-header">
+              <div class="row align-items-center">
+                <div class="col-3">
+                  <label class="form-label">监听频道ID</label>
+                  <input type="text" class="form-control" value="${source}" onchange="updateChannelMapping(${idx}, 'source', this.value)">
+                </div>
+                <div class="col-3">
+                  <label class="form-label">目标频道ID</label>
+                  <input type="text" class="form-control" value="${obj.target}" onchange="updateChannelMapping(${idx}, 'target', this.value)">
+                </div>
+                <div class="col-3">
+                  <label class="form-label">备注</label>
+                  <input type="text" class="form-control" value="${obj.remark || ''}" onchange="updateChannelMapping(${idx}, 'remark', this.value)">
+                </div>
+                <div class="col-3">
+                  <button type="button" class="btn btn-outline-info btn-sm me-2" onclick="toggleChannelConfig(${idx})">
+                    <span id="toggleText${idx}">展开配置</span>
+                  </button>
+                  <button type="button" class="btn btn-danger btn-sm" onclick="removeChannelMapping(${idx})">删除</button>
+                </div>
+              </div>
+            </div>
+            <div class="collapse" id="channelConfig${idx}">
+              <div class="channel-body">
+                <div class="config-section">
+                  <h6 class="text-primary">关键字过滤</h6>
+                  <div class="row">
+                    <div class="col-6">
+                      <label class="form-label">包含关键字（逗号分隔）</label>
+                      <input type="text" class="form-control" value="${(obj.keyword_filter?.include || []).join(',')}" onchange="updateChannelMapping(${idx}, 'keyword_include', this.value)">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">排除关键字（逗号分隔）</label>
+                      <input type="text" class="form-control" value="${(obj.keyword_filter?.exclude || []).join(',')}" onchange="updateChannelMapping(${idx}, 'keyword_exclude', this.value)">
+                    </div>
+                  </div>
+                </div>
+                <div class="config-section">
+                  <h6 class="text-primary">关键字替换</h6>
+                  <div id="replaceList${idx}"></div>
+                  <button type="button" class="btn btn-outline-secondary btn-sm" onclick="addReplaceRow(${idx})">添加替换规则</button>
+                </div>
+                <div class="config-section">
+                  <h6 class="text-primary">用户过滤</h6>
+                  <div class="row">
+                    <div class="col-6">
+                      <label class="form-label">只转发用户ID（逗号分隔）</label>
+                      <input type="text" class="form-control" value="${(obj.user_filter?.include || []).join(',')}" onchange="updateChannelMapping(${idx}, 'user_include', this.value)">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">不转发用户ID（逗号分隔）</label>
+                      <input type="text" class="form-control" value="${(obj.user_filter?.exclude || []).join(',')}" onchange="updateChannelMapping(${idx}, 'user_exclude', this.value)">
+                    </div>
+                  </div>
+                </div>
+                <div class="config-section">
+                  <h6 class="text-primary">翻译设置</h6>
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="translateEnabled${idx}" ${obj.translate?.enabled ? 'checked' : ''} onchange="updateChannelMapping(${idx}, 'translate_enabled', this.checked)">
+                        <label class="form-check-label" for="translateEnabled${idx}">
+                          启用翻译
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <label class="form-label">目标语言</label>
+                      <select class="form-control" onchange="updateChannelMapping(${idx}, 'translate_language', this.value)">
+                        <option value="chinese" ${obj.translate?.target_language === 'chinese' ? 'selected' : ''}>中文</option>
+                        <option value="english" ${obj.translate?.target_language === 'english' ? 'selected' : ''}>英文</option>
+                      </select>
+                    </div>
+                    <div class="col-4">
+                      <label class="form-label">AI模型</label>
+                      <select class="form-control" onchange="updateChannelMapping(${idx}, 'translate_model', this.value)">
+                        <option value="gpt-4o-mini" ${obj.translate?.model === 'gpt-4o-mini' ? 'selected' : ''}>GPT-4o Mini (快速经济)</option>
+                        <option value="gpt-4o" ${obj.translate?.model === 'gpt-4o' ? 'selected' : ''}>GPT-4o (高质量)</option>
+                        <option value="gpt-3.5-turbo" ${obj.translate?.model === 'gpt-3.5-turbo' ? 'selected' : ''}>GPT-3.5 Turbo (经济实惠)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        renderReplaceListForChannel(idx, obj.keyword_replace || []);
+      });
+    }
+    
+    function toggleChannelConfig(idx) {
+      const collapseElement = document.getElementById(`channelConfig${idx}`);
+      const toggleText = document.getElementById(`toggleText${idx}`);
+      const bsCollapse = new bootstrap.Collapse(collapseElement, {
+        toggle: true
+      });
+      
+      // 监听展开/收起事件来更新按钮文本
+      collapseElement.addEventListener('shown.bs.collapse', function () {
+        toggleText.textContent = '收起配置';
+      });
+      collapseElement.addEventListener('hidden.bs.collapse', function () {
+        toggleText.textContent = '展开配置';
+      });
+    }
+    
+    function renderReplaceListForChannel(channelIdx, replaceList) {
+      const container = document.getElementById(`replaceList${channelIdx}`);
+      if (!container) return;
+      container.innerHTML = '';
+      replaceList.forEach((item, replaceIdx) => {
+        container.innerHTML += `
+          <div class="row mb-2">
+            <div class="col-5">
+              <input type="text" class="form-control form-control-sm" placeholder="原词" value="${item.from || ''}" onchange="updateReplaceForChannel(${channelIdx}, ${replaceIdx}, 'from', this.value)">
+            </div>
+            <div class="col-5">
+              <input type="text" class="form-control form-control-sm" placeholder="新词" value="${item.to || ''}" onchange="updateReplaceForChannel(${channelIdx}, ${replaceIdx}, 'to', this.value)">
+            </div>
+            <div class="col-2">
+              <button type="button" class="btn btn-danger btn-sm" onclick="removeReplaceForChannel(${channelIdx}, ${replaceIdx})">删除</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+    
+    function addReplaceRow(channelIdx) {
+      const keys = Object.keys(config.channel_mapping);
+      const key = keys[channelIdx];
+      if (!config.channel_mapping[key].keyword_replace) {
+        config.channel_mapping[key].keyword_replace = [];
+      }
+      config.channel_mapping[key].keyword_replace.push({from: '', to: ''});
+      renderChannelMapping();
+    }
+    
+    function removeReplaceForChannel(channelIdx, replaceIdx) {
+      const keys = Object.keys(config.channel_mapping);
+      const key = keys[channelIdx];
+      config.channel_mapping[key].keyword_replace.splice(replaceIdx, 1);
+      renderChannelMapping();
+    }
+    
+    function updateReplaceForChannel(channelIdx, replaceIdx, field, value) {
+      const keys = Object.keys(config.channel_mapping);
+      const key = keys[channelIdx];
+      config.channel_mapping[key].keyword_replace[replaceIdx][field] = value;
+    }
+    
+    function addChannelMapping() {
+      config.channel_mapping = config.channel_mapping || {};
+      let newKey = 'new_' + Date.now();
+      config.channel_mapping[newKey] = {
+        target: '', 
+        remark: '',
+        keyword_filter: {include: [], exclude: []},
+        keyword_replace: [],
+        user_filter: {include: [], exclude: []},
+        translate: {enabled: false, target_language: 'chinese', model: 'gpt-4o-mini'}
+      };
+      renderChannelMapping();
+    }
+    
+    function removeChannelMapping(idx) {
+      const keys = Object.keys(config.channel_mapping);
+      delete config.channel_mapping[keys[idx]];
+      renderChannelMapping();
+    }
+    
+    function updateChannelMapping(idx, field, value) {
+      const keys = Object.keys(config.channel_mapping);
+      const key = keys[idx];
+      if (field === 'source') {
+        const obj = config.channel_mapping[key];
+        delete config.channel_mapping[key];
+        config.channel_mapping[value] = obj;
+      } else if (field === 'keyword_include') {
+        config.channel_mapping[key].keyword_filter = config.channel_mapping[key].keyword_filter || {};
+        config.channel_mapping[key].keyword_filter.include = value.split(',').map(s=>s.trim()).filter(Boolean);
+      } else if (field === 'keyword_exclude') {
+        config.channel_mapping[key].keyword_filter = config.channel_mapping[key].keyword_filter || {};
+        config.channel_mapping[key].keyword_filter.exclude = value.split(',').map(s=>s.trim()).filter(Boolean);
+      } else if (field === 'user_include') {
+        config.channel_mapping[key].user_filter = config.channel_mapping[key].user_filter || {};
+        config.channel_mapping[key].user_filter.include = value.split(',').map(s=>s.trim()).filter(Boolean);
+      } else if (field === 'user_exclude') {
+        config.channel_mapping[key].user_filter = config.channel_mapping[key].user_filter || {};
+        config.channel_mapping[key].user_filter.exclude = value.split(',').map(s=>s.trim()).filter(Boolean);
+      } else if (field === 'translate_enabled') {
+        config.channel_mapping[key].translate = config.channel_mapping[key].translate || {};
+        config.channel_mapping[key].translate.enabled = value;
+      } else if (field === 'translate_language') {
+        config.channel_mapping[key].translate = config.channel_mapping[key].translate || {};
+        config.channel_mapping[key].translate.target_language = value;
+      } else if (field === 'translate_model') {
+        config.channel_mapping[key].translate = config.channel_mapping[key].translate || {};
+        config.channel_mapping[key].translate.model = value;
+      } else {
+        config.channel_mapping[key][field] = value;
+      }
+    }
+    
+    // --- bots ---
+    function renderBots() {
+      const body = document.getElementById('botsBody');
+      body.innerHTML = '';
+      const bots = config.bots || [];
+      bots.forEach((bot, idx) => {
+        body.innerHTML += `
+          <tr id="botRow${idx}">
+            <td><input type="text" class="form-control" value="${bot.token || ''}" onchange="updateBot(${idx}, 'token', this.value)"></td>
+            <td><input type="text" class="form-control" value="${bot.remark || ''}" onchange="updateBot(${idx}, 'remark', this.value)"></td>
+            <td><input type="text" class="form-control" value="${(bot.target_channels || []).join(',')}" onchange="updateBot(${idx}, 'target_channels', this.value)"></td>
+            <td><button type="button" class="btn btn-danger btn-sm" onclick="removeBotRow(${idx})">删除</button></td>
+          </tr>
+        `;
+      });
+    }
+    function addBotRow() {
+      config.bots = config.bots || [];
+      config.bots.push({token: '', remark: '', target_channels: []});
+      renderBots();
+    }
+    function removeBotRow(idx) {
+      config.bots.splice(idx, 1);
+      renderBots();
+    }
+    function updateBot(idx, field, value) {
+      if (field === 'target_channels') {
+        config.bots[idx][field] = value.split(',').map(s=>s.trim()).filter(Boolean);
+      } else {
+        config.bots[idx][field] = value;
+      }
+    }
+    
+    // --- 加载和保存 ---
+    async function loadConfig() {
+      const res = await fetch('/api/config');
+      config = await res.json();
+      document.getElementById('listenerToken').value = config.listener_token || '';
+      document.getElementById('geekaiApiKey').value = config.geekai_api_key || '';
+      renderChannelMapping();
+      renderBots();
+    }
+    async function saveConfig() {
+      config.listener_token = document.getElementById('listenerToken').value.trim();
+      config.geekai_api_key = document.getElementById('geekaiApiKey').value.trim();
+      try {
+        await fetch('/api/config', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(config)
+        });
+        document.getElementById('msg').innerText = '保存成功';
+      } catch (e) {
+        document.getElementById('msg').innerText = '保存失败: ' + e;
+      }
+    }
+    async function restartBot() {
+      await fetch('/api/restart', {method: 'POST'});
+      document.getElementById('msg').innerText = '已请求重启机器人';
+    }
+    // --- 日志区 ---
+    async function loadLogs() {
+      const res = await fetch('/api/logs');
+      const data = await res.json();
+      document.getElementById('logBox').innerText = data.logs || '';
+    }
+    setInterval(loadLogs, 3000);
+    loadLogs();
+    loadConfig();
+  </script>
+</body>
+</html> 

@@ -1,0 +1,52 @@
+{
+  "bots": [
+    {
+      "remark": "Bot1",
+      "target_channels": [
+        "1393897806753955980"
+      ],
+      "token": "MTM5NzE5MjY2OTE2NzQ4NDk1OA.GipnoK.CI4uPYbJM-ijNfaSUOijzSwwO9JObbr_TehPrs"
+    }
+  ],
+  "channel_mapping": {
+    "1393897584875274361": {
+      "keyword_filter": {
+        "exclude": [
+          "广告",
+          "spam"
+        ],
+        "include": [
+          "重要",
+          "通知"
+        ]
+      },
+      "keyword_replace": [
+        {
+          "from": "旧词",
+          "to": "新词"
+        },
+        {
+          "from": "foo",
+          "to": "bar"
+        }
+      ],
+      "remark": "test-dc",
+      "target": "1393897806753955980",
+      "translate": {
+        "enabled": true,
+        "model": "gpt-4o-mini",
+        "target_language": "chinese"
+      },
+      "user_filter": {
+        "exclude": [
+          ""
+        ],
+        "include": [
+          ""
+        ]
+      }
+    }
+  },
+  "geekai_api_key": "sk-0DEFyX8uGjimlxq0ovGyundLAGSAw99TULptUugqDnuELhZQ",
+  "listener_token": "MTA3MzE5MTkwMzc4MjI1MjU1NA.GN4qBG.e4zDMau7fp5c27lgj7CAhnSwKHlFnRJGhl9-b0"
+}
